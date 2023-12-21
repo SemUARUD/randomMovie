@@ -1,0 +1,233 @@
+/* Загальні стилі для всієї сторінки */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилі для головного заголовка на сторінці */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Стилі для списку фільмів */
+.movie-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+/* Стилі для кожного елемента списку фільмів */
+.movie-item {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* Відступ зліва для кожного елемента */
+    margin-right: 10px; /* Відступ справа для кожного елемента */
+}
+
+/* Стилі для зображень фільмів */
+.movie-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Стилі для відео */
+video {
+    margin-right: 32%;
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.wrapper{
+    min-height: 100%;
+}
+
+.parallax {
+    min-height: 100vh;
+}
+.parallax__body{
+    position: fixed;
+    width: 100%;
+    height: 100%;   
+    top: 0;
+    left: 0;
+}
+
+.parallax__container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    text-transform: uppercase;
+    object-fit: cover;
+}
+
+.parallax__label{
+    color: rgba(248, 168, 20, 0.897);
+    display: flex;
+    font-size: 30px;
+    letter-spacing: 6px;
+    margin: 30px 0px 30px 0px;
+    align-items: center;
+}
+
+.parallax__title{
+    position: absolute;
+    font-size: 10px;
+    color: aqua;
+    top: 60%;
+}
+
+.parallax__images {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    top: -10%;
+    left: -5%;
+    z-index: -2;
+}
+
+.images-parallax__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.images-parallax__mountain,
+.images-parallax__clouds,
+.images-parallax__human,
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: cover; /* Зберегти пропорції відео та заповнити весь контейнер */
+}
+
+.images-parallax__clouds {
+    background: url(media.files/Azgz.gif) top / cover no-repeat;
+    top: 0;
+    z-index: -3;
+}
+
+.images-parallax__mountain {
+    background: url(media.files/ekran2.png) top / cover no-repeat;
+    top: 0;
+    z-index: 2;
+}
+
+.images-parallax__human {
+    background: url(media.files/cinema-hall.png) top / cover no-repeat;
+    top: 80%;
+    z-index: 3;
+}
+.screen {
+    left: 15%;
+    top: 25%;
+    position: relative;
+    width: 100%; /* Задайте бажаний розмір контейнера відсотками або пікселями */
+    margin: 0 auto; /* Центруємо контейнер по горизонталі */
+    overflow: hidden; /* Відсікання зайвих областей відео за межами контейнера */
+    z-index: -1;
+    
+  }
+  
+  #videoPlayer {
+    width: 70%; /* Робимо відео адаптивним за шириною контейнера */
+    height: 58%; /* Робимо відео адаптивним за висотою контейнера */
+    left: -0%;
+    object-fit: cover; /* Розтягуємо відео для заповнення всього контейнера */
+    object-position: center top; /* Вирівнюємо відео по центру по горизонталі і зверху по вертикалі */
+  }
+  
+  /* Додатковий стиль для вирівнювання тексту, якщо потрібно */
+  .screen p {
+    position: absolute;
+    top: 50%; /* Вертикальне вирівнювання по центру */
+    left: 50%; /* Горизонтальне вирівнювання по центру */
+    transform: translate(-50%, -50%); /* Центрування тексту */
+  }
+  
+
+.button__sound {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 99999;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #eb7085;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease; /* Додайте анімацію для властивості transform */
+}
+
+.button__sound:hover {
+    transform: scale(1.5); /* Збільшення масштабу при наведенні */
+}
+
+.button__video{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    z-index: 99999;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #eb7085;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease; /* Додайте анімацію для властивості transform */
+}
+
+.button__video:hover{
+    transform: scale(1.5); /* Збільшення масштабу при наведенні */
+}
+
+#toggle-video:hover {
+background-color: #555; /* Изменяем цвет фона при наведении */
+}
+  
+@media (max-aspect-ratio: 3/2) {
+    .images-parallax__human {
+        background-position: 20% top;
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 110%;
+    top: 950px;
+    background-color: #2277a1;
+    z-index: 4;
+}
+
+.content::before{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translate(0px, -100%);
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0)5%, #2277a1 100%);
+}
+
